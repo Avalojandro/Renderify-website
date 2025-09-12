@@ -2,9 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <!-- Favicon básico -->
+    <link rel="icon" href="/public/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="/public/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/public/favicon-16x16.png">
+
+    <!-- Para iOS (pantalla de inicio en iPhone/iPad) -->
+    <link rel="apple-touch-icon" href="/public/apple-touch-icon.png">
+
+    <!-- Para Android/Chrome (instalación PWA) -->
+    <link rel="manifest" href="/site.webmanifest">
+
+    <!-- Para Windows (tile color si quieres) -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+
+<!-- Color principal del navegador en móviles -->
+<meta name="theme-color" content="#ffffff">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + React + TS</title>
+
+    <meta name="description" content="Renderify lets you dynamically render elements based on a condition in a clean and easy-to-control way." />
+    <link rel="canonical" href="https://renderify.dev/" />
+    <meta name="theme-color" content="#0ea5e9" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Renderify — Render components easily and elegantly" />
+    <meta property="og:description" content="Renderify lets you dynamically render elements based on a condition in a clean and easy-to-control way." />
+    <meta property="og:url" content="https://renderify.dev/" />
+    <meta property="og:image" content="/public/renderifyog.png" />
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Renderify — Render components easily and elegantly" />
+    <meta name="twitter:description" content="Renderify lets you dynamically render elements based on a condition in a clean and easy-to-control way." />
+    <meta name="twitter:image" content="/public/renderifyog.png" />
+
+    <title>Renderify</title>
   </head>
   <body>
     <div id="root"></div>
