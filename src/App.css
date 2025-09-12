@@ -1,0 +1,13 @@
+.pattern {
+  background-color: #e5e5f7;
+  opacity: 1;
+  /* background-attachment: fixed; */
+  background-image: repeating-radial-gradient(circle at 0 0, transparent 0, #e5e5f7 100px), repeating-linear-gradient(#c1c4ff55, #c1c4ff22);
+}
+
+h1 {
+  background: -webkit-linear-gradient(#ff35a1, #c9217a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
