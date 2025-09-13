@@ -1,6 +1,17 @@
+import { useCallback } from "react";
 import "./App.css";
+// @ts-ignore
+import confetti from "canvas-confetti";
 
 function App() {
+  const handleClick = useCallback(() => {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.5 },
+    });
+  }, []);
+
   return (
     <>
       <div className="pb-12 w-full pattern z-0 bg-[#eeeaff] px-12">
@@ -17,19 +28,33 @@ function App() {
             <div className="max-w-[600px] mx-auto">
               <div className="bg-gray-800 rounded-xl shadow-2xl">
                 <div className="flex space-x-2 p-3">
-                  <div className="rounded-full w-4 h-4 cursor-pointer bg-pink-500 hover:bg-pink-700"></div>
-                  <div className="rounded-full w-4 h-4 cursor-pointer bg-yellow-300 hover:bg-yellow-500"></div>
-                  <div className="rounded-full w-4 h-4 cursor-pointer bg-emerald-400 hover:bg-emerald-600"></div>
+                  <div
+                    onClick={handleClick}
+                    className="rounded-full w-4 h-4 cursor-pointer bg-pink-500 hover:bg-pink-700"
+                  ></div>
+                  <div
+                    onClick={() => {
+                      alert("Support me with a star on GitHub!");
+                    }}
+                    className="rounded-full w-4 h-4 cursor-pointer bg-yellow-300 hover:bg-yellow-500"
+                  ></div>
+                  <div
+                    onClick={() => {
+                      console.log("Keep coding! 🖥️");
+                    }}
+                    className="rounded-full w-4 h-4 cursor-pointer bg-emerald-400 hover:bg-emerald-600"
+                  ></div>
                 </div>
                 <div className="bg-gray-700 text-left p-3 rounded-b-xl text-white">
                   <code> npm i renderify-js </code>
-                  <div className="mt-16">
+                  <div className="mt-16 flex justify-end">
                     <a
                       href="https://github.com/Avalojandro/Renderify"
                       target="_blank"
+                      className="inline-block"
                     >
                       <svg
-                        className="ml-auto mt-auto size-8 fill-white hover:fill-pink-500 rotate-360 cursor-pointer"
+                        className="ml-auto rotate-360 mt-auto size-8 fill-white hover:fill-pink-500 cursor-pointer"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 640 640"
                       >
@@ -48,12 +73,12 @@ function App() {
             <h2 className="text-2xl md:text-3xl font-bold text-gray-700 pb-2">
               Usage
             </h2>
-            <p className="text-gray-700 text-sm md:text-base font-normal">
+            <div className="text-gray-700 text-sm md:text-base font-normal">
               Renderify lets you dynamically render elements based on a
               condition in a clean and easy-to-control way. Simply import
               Renderify into your file, provide a boolean condition, and place
               the content you want to render inside its children.
-            </p>
+            </div>
           </div>
           <div className="">
             <pre className="bg-gray-800 text-sm rounded-xl overflow-auto p-4 text-white whitespace-pre-wrap break-words max-w-full box-border">
@@ -103,12 +128,12 @@ function App() {
             <h2 className="text-2xl md:text-3xl font-bold text-gray-700 pb-2">
               elseShow
             </h2>
-            <p className="text-gray-700 text-sm md:text-base font-normal">
+            <div className="text-gray-700 text-sm md:text-base font-normal">
               If you want to display an alternative element when the condition
               is false, you can use the{" "}
               <pre className="inline font-semibold text-pink-500">elseShow</pre>{" "}
               prop to specify what should be rendered instead.
-            </p>
+            </div>
           </div>
         </div>
 
@@ -117,14 +142,14 @@ function App() {
             <h2 className="text-2xl md:text-3xl font-bold text-gray-700 pb-2">
               Delay
             </h2>
-            <p className="text-gray-700 text-sm md:text-base font-normal">
+            <div className="text-gray-700 text-sm md:text-base font-normal">
               The{" "}
               <pre className="inline font-semibold text-pink-500">delay</pre>{" "}
               prop allows you to postpone the rendering of the children by a
               specified number of milliseconds. It accepts a numeric value and
               is useful when you want to introduce a slight delay before showing
               the content.
-            </p>
+            </div>
           </div>
           <div>
             <pre className="bg-gray-800 text-sm rounded-xl p-4 text-white overflow-auto whitespace-pre-wrap break-words max-w-full box-border">
@@ -181,7 +206,7 @@ function App() {
             <h2 className="text-2xl md:text-3xl font-bold text-gray-700 pb-2">
               noDestroy
             </h2>
-            <p className="text-gray-700 text-sm md:text-base font-normal">
+            <div className="text-gray-700 text-sm md:text-base font-normal">
               If you need to keep the non-rendered element in the DOM but simply
               hidden, you can use the{" "}
               <pre className="inline font-semibold text-pink-500">
@@ -189,7 +214,7 @@ function App() {
               </pre>{" "}
               prop. This ensures the element is preserved rather than removed,
               which can be useful for maintaining state or avoiding re-mounting.
-            </p>
+            </div>
           </div>
         </div>
 
@@ -198,14 +223,14 @@ function App() {
             <h2 className="text-2xl md:text-3xl font-bold text-gray-700 pb-2">
               onShow / onHide
             </h2>
-            <p className="text-gray-700 text-sm md:text-base font-normal">
+            <div className="text-gray-700 text-sm md:text-base font-normal">
               The{" "}
               <pre className="inline font-semibold text-pink-500">onShow</pre>{" "}
               and{" "}
               <pre className="inline font-semibold text-pink-500">onHide</pre>{" "}
               props are event callbacks that are triggered when the element is
               shown or hidden, respectively.
-            </p>
+            </div>
           </div>
           <div>
             <pre className="bg-gray-800 text-sm rounded-xl p-4 text-white overflow-auto whitespace-pre-wrap break-words max-w-full box-border">
